@@ -29,7 +29,7 @@ struct MovieModel {
     }
     
     enum Genre {
-        case action, adventure, fantasy, horore, mystery, thriller, romance, sciFi, drama
+        case action, adventure, fantasy, horore, mystery, thriller, romance, sciFi, drama, animation
     }
     
     static let allMovies: [MovieModel] = [
@@ -38,7 +38,7 @@ struct MovieModel {
             imdbRating: 9,
             isFavorite: false,
             isNowShowing: true,
-            isPopular: true,
+            isPopular: false,
             cast: [
                 Cast(name: "Leonardo DiCaprio", image: UIImage(named: "leonardo")!),
                 Cast(name: "Joseph Gordon-Levitt", image: UIImage(named: "joseph")!),
@@ -58,7 +58,7 @@ struct MovieModel {
             imdbRating: 10,
             isFavorite: false,
             isNowShowing: true,
-            isPopular: true,
+            isPopular: false,
             cast: [
                 Cast(name: "Christian Bale", image: UIImage(named: "christian")!),
                 Cast(name: "Heath Ledger", image: UIImage(named: "heath")!),
@@ -77,13 +77,13 @@ struct MovieModel {
             name: "Interstellar",
             imdbRating: 8,
             isFavorite: false,
-            isNowShowing: false,
-            isPopular: true,
+            isNowShowing: true,
+            isPopular: false,
             cast: [
                 Cast(name: "Matthew McConaughey", image: UIImage(named: "matthew")!),
                 Cast(name: "Anne Hathaway", image: UIImage(named: "anne")!),
                 Cast(name: "Jessica Chastain", image: UIImage(named: "jessica")!),
-                Cast(name: "Michael Caine", image: UIImage(named: "michael_interstellar")!),
+                Cast(name: "Michael Caine", image: UIImage(named: "michael")!),
                 Cast(name: "Timothée Chalamet", image: UIImage(named: "timothee")!)
             ],
             movieImage: UIImage(named: "interstellar")!,
@@ -98,7 +98,7 @@ struct MovieModel {
             imdbRating: 9,
             isFavorite: false,
             isNowShowing: true,
-            isPopular: true,
+            isPopular: false,
             cast: [
                 Cast(name: "Song Kang-ho", image: UIImage(named: "song")!),
                 Cast(name: "Lee Sun-kyun", image: UIImage(named: "lee")!),
@@ -136,7 +136,7 @@ struct MovieModel {
         MovieModel(
             name: "The Godfather",
             imdbRating: 10,
-            isFavorite: false,
+            isFavorite: true,
             isNowShowing: false,
             isPopular: true,
             cast: [
@@ -156,7 +156,7 @@ struct MovieModel {
         MovieModel(
             name: "Forrest Gump",
             imdbRating: 9,
-            isFavorite: false,
+            isFavorite: true,
             isNowShowing: false,
             isPopular: true,
             cast: [
@@ -176,9 +176,9 @@ struct MovieModel {
         MovieModel(
             name: "Gladiator",
             imdbRating: 8,
-            isFavorite: false,
+            isFavorite: true,
             isNowShowing: false,
-            isPopular: true,
+            isPopular: false,
             cast: [
                 Cast(name: "Russell Crowe", image: UIImage(named: "russell")!),
                 Cast(name: "Joaquin Phoenix", image: UIImage(named: "joaquin")!),
@@ -196,9 +196,9 @@ struct MovieModel {
         MovieModel(
             name: "Titanic",
             imdbRating: 9,
-            isFavorite: false,
+            isFavorite: true,
             isNowShowing: false,
-            isPopular: true,
+            isPopular: false,
             cast: [
                 Cast(name: "Leonardo DiCaprio", image: UIImage(named: "leonardo")!),
                 Cast(name: "Kate Winslet", image: UIImage(named: "kate")!),
@@ -216,9 +216,9 @@ struct MovieModel {
         MovieModel(
             name: "The Lion King",
             imdbRating: 8,
-            isFavorite: false,
+            isFavorite: true,
             isNowShowing: false,
-            isPopular: true,
+            isPopular: false,
             cast: [
                 Cast(name: "Matthew Broderick", image: UIImage(named: "matthew_b")!),
                 Cast(name: "James Earl Jones", image: UIImage(named: "james")!),
