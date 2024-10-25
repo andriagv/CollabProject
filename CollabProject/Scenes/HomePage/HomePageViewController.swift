@@ -9,11 +9,9 @@ import UIKit
 //tinatini
 // ეს არის უბრალოდ ვიუ სადაც ვიზუალი იქნება ჯოუმ ფეიჯის  . ქონსთრეინთების დადების ადგილი
 
-class HopePageViewController: UIViewController {
+class HomePageViewController: UIViewController {
     
     //MARK: - Properties
-    
-    let viewModel = HopePageViewModel()
 
     private lazy var NowShowingMovieCollectionView: UICollectionView = {
         let collectionView = UICollectionView ()
