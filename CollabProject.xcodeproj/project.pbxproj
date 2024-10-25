@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		18FA13FF2CCBA29B008DFAB3 /* CollabProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = CollabProject.app; path = "/Users/apple/Desktop/CollabProject/build/Debug-iphoneos/CollabProject.app"; sourceTree = "<absolute>"; };
+		71749CA82CCC3D0C00B378C5 /* CollabProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollabProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		18FA140E2CCBA2ED008DFAB3 /* Exceptions for "CollabProject" folder in "CollabProject" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Supporting/Info.plist,
+				Info.plist,
 			);
 			target = 18FA13DF2CCBA0BB008DFAB3 /* CollabProject */;
 		};
@@ -46,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				18FA13E22CCBA0BB008DFAB3 /* CollabProject */,
+				71749CA82CCC3D0C00B378C5 /* CollabProject.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,7 +72,7 @@
 			packageProductDependencies = (
 			);
 			productName = CollabProject;
-			productReference = 18FA13FF2CCBA29B008DFAB3 /* CollabProject.app */;
+			productReference = 71749CA82CCC3D0C00B378C5 /* CollabProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
