@@ -7,7 +7,7 @@
 
 import Foundation
 //tinatini
-final class HopePageViewModel {
+final class HomePageViewModel {
     
     
     

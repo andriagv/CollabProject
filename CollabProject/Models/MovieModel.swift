@@ -12,16 +12,16 @@ import UIKit
 struct MovieModel {
     var name: String
     var imdbRating: Int
-    var isFavorite: Bool = false
-    var isNowShowing: Bool = false
-    var isPopular: Bool = false
+    var isFavorite = false
+    var isNowShowing = false
+    var isPopular = false
     var cast: [Cast]
     let movieImage: UIImage
     let description: String
     let length: String
     let language: String
     let pgRating: String
-    let genre: Genre
+    let genre: [Genre]
     
     struct Cast {
         let name: String
@@ -51,7 +51,7 @@ struct MovieModel {
             length: "2h 28m",
             language: "English",
             pgRating: "PG-13",
-            genre: .action
+            genre: [.action, .fantasy]
         ),
         MovieModel(
             name: "The Dark Knight",
@@ -71,7 +71,7 @@ struct MovieModel {
             length: "2h 32m",
             language: "English",
             pgRating: "PG-13",
-            genre: .action
+            genre: [.action, .fantasy]
         ),
         MovieModel(
             name: "Interstellar",
@@ -91,7 +91,7 @@ struct MovieModel {
             length: "2h 49m",
             language: "English",
             pgRating: "PG-13",
-            genre: .sciFi
+            genre: [.sciFi]
         ),
         MovieModel(
             name: "Parasite",
@@ -111,7 +111,7 @@ struct MovieModel {
             length: "2h 12m",
             language: "Korean",
             pgRating: "R",
-            genre: .thriller
+            genre: [.thriller]
         ),
         MovieModel(
             name: "The Matrix",
@@ -131,7 +131,7 @@ struct MovieModel {
             length: "2h 16m",
             language: "English",
             pgRating: "R",
-            genre: .action
+            genre: [.action]
         ),
         MovieModel(
             name: "The Godfather",
@@ -151,7 +151,7 @@ struct MovieModel {
             length: "2h 55m",
             language: "English",
             pgRating: "R",
-            genre: .drama
+            genre: [.drama]
         ),
         MovieModel(
             name: "Forrest Gump",
@@ -171,7 +171,7 @@ struct MovieModel {
             length: "2h 22m",
             language: "English",
             pgRating: "PG-13",
-            genre: .drama
+            genre: [.drama]
         ),
         MovieModel(
             name: "Gladiator",
@@ -191,7 +191,7 @@ struct MovieModel {
             length: "2h 35m",
             language: "English",
             pgRating: "R",
-            genre: .action
+            genre: [.action]
         ),
         MovieModel(
             name: "Titanic",
@@ -211,7 +211,7 @@ struct MovieModel {
             length: "3h 15m",
             language: "English",
             pgRating: "PG-13",
-            genre: .romance
+            genre: [.romance]
         ),
         MovieModel(
             name: "The Lion King",
@@ -231,7 +231,7 @@ struct MovieModel {
             length: "1h 58m",
             language: "English",
             pgRating: "G",
-            genre: .animation
+            genre: [.animation]
         )
     ]
 }
