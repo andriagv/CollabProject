@@ -7,7 +7,7 @@
  
 import UIKit
  
-class FavoritePageCollectionViewCell: UICollectionViewCell {
+final class FavoritePageCollectionViewCell: UICollectionViewCell {
     
     private let posterImageView: UIImageView = {
             let imageView = UIImageView()
