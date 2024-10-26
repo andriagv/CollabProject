@@ -79,7 +79,6 @@ class HomePageTableViewCell: UITableViewCell {
         movieImage.image = movie.movieImage
     }
     
-   
     private func cellConfig() {
         contentView.addSubview(starImage)
         contentView.addSubview(movieName)
@@ -118,46 +117,33 @@ class HomePageTableViewCell: UITableViewCell {
         clockImage.translatesAutoresizingMaskIntoConstraints = false
         movieGenreStack.translatesAutoresizingMaskIntoConstraints = false
         imdbRatingStack.translatesAutoresizingMaskIntoConstraints = false
-        
-        
+                
         NSLayoutConstraint.activate([
             movieImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
             movieImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             movieImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
             movieImage.heightAnchor.constraint(equalToConstant: 128),
-            movieImage.widthAnchor.constraint(equalToConstant: 85)
-        ])
+            movieImage.widthAnchor.constraint(equalToConstant: 85),
         
-        NSLayoutConstraint.activate([
             clockImage.leftAnchor.constraint(equalTo: movieName.leftAnchor),
             clockImage.rightAnchor.constraint(equalTo: movieLenght.leftAnchor, constant: -10),
-            clockImage.bottomAnchor.constraint(equalTo: movieImage.bottomAnchor, constant: -3)
-        ])
+            clockImage.bottomAnchor.constraint(equalTo: movieImage.bottomAnchor, constant: -3),
         
-        NSLayoutConstraint.activate([
             movieName.topAnchor.constraint(equalTo: movieImage.topAnchor),
             movieName.leftAnchor.constraint(equalTo: movieImage.rightAnchor, constant: 20),
-            movieName.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 30)
-        ])
+            movieName.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 30),
         
-        NSLayoutConstraint.activate([
             imdbRatingStack.topAnchor.constraint(equalTo: movieName.bottomAnchor, constant: 10),
-            imdbRatingStack.leftAnchor.constraint(equalTo: movieName.leftAnchor)
-        ])
+            imdbRatingStack.leftAnchor.constraint(equalTo: movieName.leftAnchor),
         
-        NSLayoutConstraint.activate([
             starImage.widthAnchor.constraint(equalToConstant: 15),
-            starImage.heightAnchor.constraint(equalToConstant: 15)
-        ])
+            starImage.heightAnchor.constraint(equalToConstant: 15),
         
-        NSLayoutConstraint.activate([
             movieGenreStack.leftAnchor.constraint(equalTo: movieName.leftAnchor),
-            movieGenreStack.topAnchor.constraint(equalTo: movieRating.bottomAnchor, constant: 15)
-        ])
+            movieGenreStack.topAnchor.constraint(equalTo: movieRating.bottomAnchor, constant: 15),
         
-        NSLayoutConstraint.activate([
             movieLenght.leftAnchor.constraint(equalTo: clockImage.rightAnchor, constant: 20),
-            movieLenght.bottomAnchor.constraint(equalTo: clockImage.bottomAnchor),
+            movieLenght.bottomAnchor.constraint(equalTo: clockImage.bottomAnchor)
         ])
     }
 }
