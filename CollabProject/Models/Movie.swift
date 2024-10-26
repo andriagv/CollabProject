@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 struct Movie {
     var name: String
     var imdbRating: Double
@@ -28,9 +27,17 @@ struct Movie {
         let image: UIImage?
     }
     
-    enum Genre {
-        case action, adventure, fantasy, horore, mystery, thriller, romance, sciFi, drama, animation, comedy, crime
-    }
+   enum Genre: String {
+            case action = "Action"
+            case drama = "Drama"
+            case comedy = "Comedy"
+            case sciFi = "Sci-Fi"
+            case thriller = "Thriller"
+            case romance = "Romance"
+            case adventure = "Adventure"
+            case animation = "Animation"
+            case crime = "Crime"
+        }
 }
 
 
