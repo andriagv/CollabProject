@@ -8,5 +8,14 @@
 import Foundation
 
 final class HomePageViewModel {
+    
+    var movies = MovieList()
 
+    var numberOfMovies: Int {
+        movies.allMovies.count
+    }
+    
+    func movie(at index: Int) -> Movie {
+        movies.allMovies[index]
+    }
 }
