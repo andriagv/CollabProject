@@ -36,13 +36,11 @@ class HomePageCollectionViewCell: UICollectionViewCell {
         movieImageView.layer.shadowOffset = CGSize(width: 0, height: 2)
         contentView.addSubview(movieImageView)
         
- 
         movieTitleLabel.font = UIFont.boldSystemFont(ofSize: 16)
         movieTitleLabel.numberOfLines = 0
         movieTitleLabel.textAlignment = .left
         contentView.addSubview(movieTitleLabel)
         
- 
         imdbRatingLabel.font = UIFont.systemFont(ofSize: 14)
         imdbRatingLabel.textAlignment = .left
         contentView.addSubview(imdbRatingLabel)
