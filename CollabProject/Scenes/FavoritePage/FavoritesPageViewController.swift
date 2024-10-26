@@ -81,7 +81,5 @@ extension FavoritesPageViewController: UICollectionViewDataSource, UICollectionV
         cell.configure(with: movie)
         return cell
     }
-    
-
 }
 
