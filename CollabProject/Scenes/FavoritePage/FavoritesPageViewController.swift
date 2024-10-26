@@ -15,7 +15,7 @@
 import UIKit
 import Foundation
  
-class FavoritesPageViewController: UIViewController {
+final class FavoritesPageViewController: UIViewController {
    
     let viewModel = FavoritesPageViewModel()
     
