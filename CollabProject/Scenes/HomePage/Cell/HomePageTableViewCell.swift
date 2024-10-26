@@ -16,6 +16,8 @@ class HomePageTableViewCell: UITableViewCell {
     private var movieLenght = UILabel()
     private var movieGenreStack = UIStackView()
     private var imdbRatingStack = UIStackView()
+    private var starImage = UIImageView()
+    private var clockImage = UIImageView()
     
     var movie: Movie?
     
@@ -32,18 +34,8 @@ class HomePageTableViewCell: UITableViewCell {
     private func setupUI() {
         cellConfig()
     }
-    
-    struct Colors {
-        static let starImageTintColor = UIColor(red: 255/255, green: 195/255, blue: 25/255, alpha: 1.0)
-        static let genrecolor = UIColor(red: 219/255.0, green: 227/255.0, blue: 255/255.0, alpha: 1.0)
-        static let genreColorLabel = UIColor(red: 136/255.0, green: 164/255.0, blue: 232/255.0, alpha: 1.0)
-    }
-    
 
-    var starImage = UIImageView()
-    var clockImage = UIImageView()
-    
-    func setupGenres(genres: [Movie.Genre]) {
+    private func setupGenres(genres: [Movie.Genre]) {
         movieGenreStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
         for genre in genres {
@@ -66,15 +58,10 @@ class HomePageTableViewCell: UITableViewCell {
         }
     }
     
-    private func tostring(genre: [Movie.Genre]) -> String {
-        genre.map({$0.rawValue}).joined(separator: "")
-    }
-    
-    func configure(movie: Movie) {
+    private func configure(movie: Movie) {
         movieName.text = movie.name
         movieLenght.text = "\(movie.length)"
         movieRating.text = "\(movie.imdbRating)/10 IMDB"
-    
         setupGenres(genres: movie.genre)
         movieImage.image = movie.movieImage
     }
@@ -145,6 +132,12 @@ class HomePageTableViewCell: UITableViewCell {
             movieLenght.leftAnchor.constraint(equalTo: clockImage.rightAnchor, constant: 20),
             movieLenght.bottomAnchor.constraint(equalTo: clockImage.bottomAnchor)
         ])
+    }
+    
+    private struct Colors {
+        static let starImageTintColor = UIColor(red: 255/255, green: 195/255, blue: 25/255, alpha: 1.0)
+        static let genrecolor = UIColor(red: 219/255.0, green: 227/255.0, blue: 255/255.0, alpha: 1.0)
+        static let genreColorLabel = UIColor(red: 136/255.0, green: 164/255.0, blue: 232/255.0, alpha: 1.0)
     }
 }
 
