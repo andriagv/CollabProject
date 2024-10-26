@@ -6,25 +6,7 @@
 //
 
 import Foundation
-//tinatini
+
 final class HomePageViewModel {
-    
-    
-    
-    private var movies: [MovieModel] = MovieModel.allMovies
-   
-    var numberOfMovies: Int {
-        movies.count
-    }
-    
-    func movie(at index: Int) -> MovieModel {
-        movies[index]
-    }
-    
-    func getNewMovie() {
-        
-    }
-    
-    
 
 }

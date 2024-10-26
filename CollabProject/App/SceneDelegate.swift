@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: scene)
-        let vc = HomePageViewController()
+        let vc = tabBarController()
         let navCon = UINavigationController(rootViewController: vc)
         vc.view.backgroundColor = .white
         
