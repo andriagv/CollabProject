@@ -17,7 +17,6 @@ final class DetailPageViewModel {
     var Allmovies: [Movie]
     weak var delegate: DetailPageViewModelDelegate?
     
-    
     init() {
         Allmovies = vc.allMovies
     }
@@ -27,7 +26,7 @@ final class DetailPageViewModel {
     }
     
     func movie(at index: Int) -> Movie {
-        return Allmovies[index]
+        Allmovies[index]
     }
     
     func backButtonTapped() {
