@@ -81,5 +81,12 @@ extension FavoritesPageViewController: UICollectionViewDataSource, UICollectionV
         cell.configure(with: movie)
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedMovie = viewModel.movie(at: indexPath.item)
+        let detailsVC = DetailPageViewController()
+        detailsVC.movie = selectedMovie
+        navigationController?.pushViewController(detailsVC, animated: true)
+    } 
 }
 
