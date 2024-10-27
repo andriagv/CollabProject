@@ -7,13 +7,14 @@
 
 import UIKit
 
-class tabBarController: UITabBarController {
+class tabBarController: UITabBarController, UITabBarControllerDelegate {
 
     let titleLabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabs()
         titleLabelConfig()
+        self.delegate = self
     }
     
     private func titleLabelConfig() {
@@ -21,14 +22,11 @@ class tabBarController: UITabBarController {
         titleLabel.textColor = .black
         titleLabel.text = "Movie man"
         titleLabel.font = UIFont(name: "Georgia-Bold", size: 20)
-        
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide
-                .topAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor)
-        ])
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+
         self.navigationItem.titleView = titleLabel
+
+        updateTitleLabel(for: selectedViewController)
     }
 
     private func configureTabs() {
@@ -39,6 +37,19 @@ class tabBarController: UITabBarController {
         vc2.tabBarItem.image = UIImage(systemName: "bookmark")
         
         setViewControllers([vc1, vc2], animated: true)
+        self.tabBar.isTranslucent = false
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        updateTitleLabel(for: viewController)
+    }
+
+    private func updateTitleLabel(for viewController: UIViewController?) {
+        if viewController is HomePageViewController {
+            titleLabel.isHidden = false
+        } else {
+            titleLabel.isHidden = true
+        }
     }
 
 }
