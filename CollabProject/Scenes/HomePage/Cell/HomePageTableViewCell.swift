@@ -58,7 +58,7 @@ class HomePageTableViewCell: UITableViewCell {
         }
     }
     
-    private func configure(movie: Movie) {
+    func configure(movie: Movie) {
         movieName.text = movie.name
         movieLenght.text = "\(movie.length)"
         movieRating.text = "\(movie.imdbRating)/10 IMDB"
@@ -76,6 +76,9 @@ class HomePageTableViewCell: UITableViewCell {
         contentView.addSubview(clockImage)
         contentView.addSubview(movieGenreStack)
         contentView.addSubview(imdbRatingStack)
+        
+        movieImage.layer.cornerRadius = 10
+        movieImage.layer.masksToBounds = true
         
         imdbRatingStack.addArrangedSubview(starImage)
         imdbRatingStack.addArrangedSubview(movieRating)
@@ -114,7 +117,9 @@ class HomePageTableViewCell: UITableViewCell {
         
             clockImage.leftAnchor.constraint(equalTo: movieName.leftAnchor),
             clockImage.rightAnchor.constraint(equalTo: movieLenght.leftAnchor, constant: -10),
-            clockImage.bottomAnchor.constraint(equalTo: movieImage.bottomAnchor, constant: -3),
+            clockImage.centerYAnchor.constraint(equalTo: movieLenght.centerYAnchor),
+            clockImage.heightAnchor.constraint(equalToConstant: 14),
+            clockImage.widthAnchor.constraint(equalToConstant: 14),
         
             movieName.topAnchor.constraint(equalTo: movieImage.topAnchor),
             movieName.leftAnchor.constraint(equalTo: movieImage.rightAnchor, constant: 20),
@@ -130,7 +135,7 @@ class HomePageTableViewCell: UITableViewCell {
             movieGenreStack.topAnchor.constraint(equalTo: movieRating.bottomAnchor, constant: 15),
         
             movieLenght.leftAnchor.constraint(equalTo: clockImage.rightAnchor, constant: 20),
-            movieLenght.bottomAnchor.constraint(equalTo: clockImage.bottomAnchor)
+            movieLenght.bottomAnchor.constraint(equalTo: movieImage.bottomAnchor),
         ])
     }
     
