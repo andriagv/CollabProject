@@ -45,15 +45,15 @@ class HomePageViewController: UIViewController {
     private let nowShowingLabel: UILabel = {
             let label = UILabel()
             label.text = "Now Showing"
-            label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            label.font = UIFont(name: "Georgia-Bold", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
      
     private let titleLabel: UILabel = {
             let label = UILabel()
-            label.text = "Populars"
-            label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            label.text = "Popular"
+            label.font = UIFont(name: "Georgia-Bold", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -68,7 +68,7 @@ class HomePageViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
  
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -100,7 +100,7 @@ class HomePageViewController: UIViewController {
             nowShowingLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             
             
-            titleLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
             titleLabel.leftAnchor.constraint(equalTo: tableView.leftAnchor)
             
         ])
@@ -147,7 +147,7 @@ extension HomePageViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedMovie = viewModel.movie(at: indexPath.item)
         let detailsVC = DetailPageViewController()
-        detailsVC.movie = selectedMovie
+      //  detailsVC.movie = selectedMovie
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
@@ -171,7 +171,7 @@ extension HomePageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedMovie = viewModel.movie(at: indexPath.item)
         let detailsVC = DetailPageViewController()
-        detailsVC.movie = selectedMovie
+    //    detailsVC.movie = selectedMovie
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
