@@ -28,7 +28,8 @@ final class FavoritePageCollectionViewCell: UICollectionViewCell {
     
     private let starImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Star")
+        imageView.image = UIImage(systemName: "star.fill")
+        imageView.tintColor = Colors.starImageTintColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -82,6 +83,10 @@ final class FavoritePageCollectionViewCell: UICollectionViewCell {
         posterImageView.image = movie.movieImage
         titleLabel.text = movie.name
         ratingLabel.text = "\(movie.imdbRating) IMDb"
+    }
+
+    private struct Colors {
+        static let starImageTintColor = UIColor(red: 255/255, green: 195/255, blue: 25/255, alpha: 1.0)
     }
 }
 

@@ -24,7 +24,7 @@ final class FavoritesPageViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Favorites"
-        label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.font = UIFont(name: "Georgia-Bold", size: 20)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

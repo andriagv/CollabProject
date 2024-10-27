@@ -19,7 +19,9 @@ final class FavoritesPageViewModel {
     }
     
     func numberOfItems() -> Int {
-        Allmovies.count
+        let allFavoriteMovie = Allmovies.filter { $0.isFavorite == true }
+        Allmovies = allFavoriteMovie
+        return allFavoriteMovie.count
     }
     
     func movie(at index: Int) -> Movie {
