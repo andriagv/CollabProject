@@ -48,7 +48,10 @@ Comprehensive movie information, including:
 - **Development Tool**: Xcode
 
 ## Screenshots
-Add screenshots here if desired.
+<img width="321" alt="AppFavoritesPage" src="https://github.com/user-attachments/assets/8b16cad1-f8f3-4b9a-9b47-92265c971576">
+<img width="315" alt="AppDetailsPage" src="https://github.com/user-attachments/assets/bea0b6b1-8ee1-4407-8d47-b629aa455e69">
+<img width="311" alt="AppHomePage" src="https://github.com/user-attachments/assets/6db4e8a2-a995-4909-9977-c96ed73e312a">
+
 
 ## Team Members
 - Andria Gvaramia
