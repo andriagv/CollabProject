@@ -7,7 +7,7 @@
 
 import UIKit
 
-class tabBarController: UITabBarController, UITabBarControllerDelegate {
+class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
     let titleLabel = UILabel()
     override func viewDidLoad() {
