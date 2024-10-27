@@ -442,17 +442,17 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
 
 extension DetailPageViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.numberOfItems()
+        return movie?.cast.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailPageCollectionViewCell.identifier, for: indexPath) as? DetailPageCollectionViewCell
-        let selectedMovie = viewModel.movie(at: indexPath.row)
-        cell?.configure(with: selectedMovie.cast[0])
+        if let movie = movie {
+            cell?.configure(with: movie.cast[indexPath.row])
+        }
         return cell ?? UICollectionViewCell()
     }
 }
-
 
 extension DetailPageViewController: UICollectionViewDelegateFlowLayout {
     
