@@ -1,89 +1,102 @@
-MovieApp
-A dynamic iOS application for browsing movies, checking ratings, and managing favourite’s. Built with UIKit and following the MVVM architecture pattern.
-Features
-Home Page
-	•	Now Showing Section
-	◦	Horizontal scrollable collection of new releases
-	◦	Movie posters with titles and IMDb ratings
-	◦	Clean, card-based UI design
-	•	Popular Movies Section
-	◦	Vertical scrollable list
-	◦	Detailed movie cards including:
-	▪	Movie poster
-	▪	Genre tags
-	▪	Title
-	▪	Runtime
-	▪	IMDb rating
-	•	Navigation
-	◦	Quick access to movies list
-	◦	Favourite’s list shortcut
-Favorites Page
-	•	Collection of user's favourite movies
-	•	Movie cards displaying:
-	◦	Movie poster
-	◦	Title
-	◦	IMDb rating
-Details Page
-Comprehensive movie information including:
-	•	Full-size movie poster
-	•	Genre tags
-	•	Title
-	•	IMDb rating
-	•	Language
-	•	Runtime
-	•	Plot description
-	•	Cast section
-	◦	Actor/Actress photos
-	◦	Cast member names
-Technical Details
-	•	Framework: UIKit
-	•	Architecture Pattern: MVVM
-	•	Asset Management: Local image assets
-	•	Development Tool: Xcode
-Screenshots
- აქ ჩავსვათ სქრინშოტები თუ გვინდა..
-Team Members
-	•	Andria Gvaramia
-	•	Giorgi Gakhokidze
-	•	Tinatin Jishkariani
-	•	Giorgi Kakaladze
-	•	Irakli Janashvili
-	•	Levan Gorjeladze
-Project Structure:
+# MovieApp
 
+A dynamic iOS application for browsing movies, checking ratings, and managing favorites. Built with UIKit and following the MVVM architecture pattern.
+
+## Features
+
+### Home Page
+- **Now Showing Section**  
+  - Horizontal, scrollable collection of new releases
+  - Displays movie posters with titles and IMDb ratings
+  - Clean, card-based UI design
+
+- **Popular Movies Section**  
+  - Vertical scrollable list of popular movies
+  - Detailed movie cards showing:
+    - Movie poster
+    - Genre tags
+    - Title
+    - Runtime
+    - IMDb rating
+
+- **Navigation**  
+  - Quick access to the complete movies list
+  - Shortcut to the favorites list
+
+### Favorites Page
+- Displays a collection of user’s favorite movies
+- Each movie card includes:
+  - Movie poster
+  - Title
+  - IMDb rating
+
+### Details Page
+Comprehensive movie information, including:
+- Full-size movie poster
+- Genre tags
+- Title
+- IMDb rating
+- Language
+- Runtime
+- Plot description
+- Cast section with actor/actress photos and names
+
+## Technical Details
+- **Framework**: UIKit
+- **Architecture Pattern**: MVVM
+- **Asset Management**: Local image assets
+- **Development Tool**: Xcode
+
+## Screenshots
+Add screenshots here if desired.
+
+## Team Members
+- Andria Gvaramia
+- Giorgi Gakhokidze
+- Tinatin Jishkariani
+- Giorgi Kakaladze
+- Irakli Janashvili
+- Levan Gorjeladze
+
+## Project Structure
+
+```
 CollabProject/
 ├── App/
-│   ├── AppDelegate
-│   └── SceneDelegate
+│   ├── AppDelegate.swift
+│   └── SceneDelegate.swift
 ├── Models/
-│   ├── Movie
-│   └── MovieList
+│   ├── Movie.swift
+│   └── MovieList.swift
 ├── Resources/
-│   └── Assets
+│   └── Assets.xcassets
 ├── Scenes/
 │   ├── DetailPage/
 │   ├── FavoritePage/
 │   │   ├── Cell/
-│   │   │   └── FavoritePageCollectionViewCell
-│   │   ├── FavoritesPageViewController
-│   │   └── FavoritesPageViewModel
+│   │   │   └── FavoritePageCollectionViewCell.swift
+│   │   ├── FavoritesPageViewController.swift
+│   │   └── FavoritesPageViewModel.swift
 │   └── HomePage/
 │       ├── Cell/
-│       │   ├── HomePageCollectionViewCell
-│       │   └── HomePageTableViewCell
-│       ├── HomePageViewController
-│       ├── HomePageViewModel
-│       └── tabBarControllerViewController
+│       │   ├── HomePageCollectionViewCell.swift
+│       │   └── HomePageTableViewCell.swift
+│       ├── HomePageViewController.swift
+│       ├── HomePageViewModel.swift
+│       └── TabBarControllerViewController.swift
 ├── Supporting/
-│   ├── Info
-│   └── CollabProject
+│   ├── Info.plist
+│   └── CollabProject.xcodeproj
+```
 
-Requirements
-	•	iOS [version requirement]
-	•	Xcode (version: 16)
-Installation
-	1	Clone the repository: https://github.com/andriagv/CollabProject.git
-	1	Open CollabProject in Xcode
-	2	Build and run the project
-Contributing
-This project is maintained by the team members listed above. For any questions or suggestions, please reach out to the team.
+## Requirements
+- iOS [version requirement]
+- Xcode 16
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/andriagv/CollabProject.git
+   ```
+2. Open `CollabProject` in Xcode.
+3. Build and run the project.
