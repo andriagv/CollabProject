@@ -58,7 +58,7 @@ final class FavoritesPageViewController: UIViewController {
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -35),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
