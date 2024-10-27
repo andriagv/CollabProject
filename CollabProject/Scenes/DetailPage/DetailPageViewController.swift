@@ -91,7 +91,6 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
         return genreStackView
     }()
     
-    //add from here
     private let infoStackView: UIStackView = {
         let infoStackView = UIStackView()
         infoStackView.axis = .horizontal
@@ -100,11 +99,19 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
         return infoStackView
     }()
     
+    private let infoStackViewStatic: UIStackView = {
+        let infoStackViewStatic = UIStackView()
+        infoStackViewStatic.axis = .horizontal
+        infoStackViewStatic.distribution = .equalSpacing
+        infoStackViewStatic.spacing = 16
+        return infoStackViewStatic
+    }()
+    
     let lengthLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.textColor = .black
         return label
     }()
@@ -113,24 +120,51 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
         let languageLabel = UILabel()
         languageLabel.translatesAutoresizingMaskIntoConstraints = false
         languageLabel.font = UIFont.systemFont(ofSize: 12)
-        languageLabel.textAlignment = .center
+        languageLabel.textAlignment = .left
         languageLabel.textColor = .black
         return languageLabel
     }()
-
+    
     let infoRatingLabel: UILabel = {
         let infoRatingLabel = UILabel()
         infoRatingLabel.translatesAutoresizingMaskIntoConstraints = false
         infoRatingLabel.font = UIFont.systemFont(ofSize: 12)
-        infoRatingLabel.textAlignment = .center
+        infoRatingLabel.textAlignment = .left
         infoRatingLabel.textColor = .black
         return infoRatingLabel
+    }()
+    
+    let infoRatingLabelStatic: UILabel = {
+        let infoRatingLabelStatic = UILabel()
+        infoRatingLabelStatic.translatesAutoresizingMaskIntoConstraints = false
+        infoRatingLabelStatic.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        infoRatingLabelStatic.textAlignment = .left
+        infoRatingLabelStatic.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1.0)
+        return infoRatingLabelStatic
+    }()
+    
+    let languageLabelStatic: UILabel = {
+        let languageLabelStatic = UILabel()
+        languageLabelStatic.translatesAutoresizingMaskIntoConstraints = false
+        languageLabelStatic.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        languageLabelStatic.textAlignment = .left
+        languageLabelStatic.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1.0)
+        return languageLabelStatic
+    }()
+    
+    let lengthLabelStatic: UILabel = {
+        let lengthLabelStatic = UILabel()
+        lengthLabelStatic.translatesAutoresizingMaskIntoConstraints = false
+        lengthLabelStatic.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        lengthLabelStatic.textAlignment = .left
+        lengthLabelStatic.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1.0)
+        return lengthLabelStatic
     }()
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .darkGray
+        label.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1.0)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -169,12 +203,13 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
         setupRatingLabel()
         setupFavoriteButton()
         setupGenreStackView()
+        setupInfoStackViewStatic()
+        setupInfoStackView()
         setupDescriptionLabel()
         setupCastTitleLabel()
         setupBackButton()
         configureBackButton()
         configureFavButton()
-        setupInfoStackView()
     }
     
     private func setupBackButton() {
@@ -245,7 +280,6 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
         nameLabel.text = movie?.name
         nameLabel.textColor = .black
         
-        // IS NOT ON TOP LEFT // ARVICI VER GAVASWORE
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: nameRatingButtonView.topAnchor, constant: 0),
             nameLabel.leftAnchor.constraint(equalTo: nameRatingButtonView.leftAnchor, constant: 0),
@@ -307,8 +341,9 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
         descriptionLabel.numberOfLines = 0
         
         NSLayoutConstraint.activate([
-            desctiptionHeader.topAnchor.constraint(equalTo: genreStackView.bottomAnchor, constant: 16),
+            desctiptionHeader.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 16),
             desctiptionHeader.leftAnchor.constraint(equalTo: viewForDetails.leftAnchor, constant: 24),
+            
             descriptionLabel.topAnchor.constraint(equalTo: desctiptionHeader.bottomAnchor, constant: 7),
             descriptionLabel.leftAnchor.constraint(equalTo: viewForDetails.leftAnchor, constant: 24),
             descriptionLabel.rightAnchor.constraint(equalTo: viewForDetails.rightAnchor, constant: -24),
@@ -342,10 +377,31 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
                 label.heightAnchor.constraint(equalToConstant: 30)
             ])
         }
+        
         NSLayoutConstraint.activate([
             genreStackView.leadingAnchor.constraint(equalTo: nameRatingButtonView.leadingAnchor),
             genreStackView.topAnchor.constraint(equalTo: nameRatingButtonView.bottomAnchor, constant: 24),
             genreStackView.heightAnchor.constraint(equalToConstant: 18)
+        ])
+    }
+    
+    private func setupInfoStackViewStatic() {
+        viewForDetails.addSubview(infoStackViewStatic)
+        infoStackViewStatic.translatesAutoresizingMaskIntoConstraints = false
+        infoStackViewStatic.addArrangedSubview(lengthLabelStatic)
+        infoStackViewStatic.addArrangedSubview(languageLabelStatic)
+        infoStackViewStatic.addArrangedSubview(infoRatingLabelStatic)
+        
+        lengthLabelStatic.text = "Length"
+        languageLabelStatic.text = "Language"
+        infoRatingLabelStatic.text = "Rating"
+        
+        NSLayoutConstraint.activate([
+            infoStackViewStatic.topAnchor.constraint(equalTo: genreStackView.bottomAnchor, constant: 20),
+            infoStackViewStatic.leadingAnchor.constraint(equalTo: genreStackView.leadingAnchor),
+            lengthLabelStatic.widthAnchor.constraint(equalToConstant: 109),
+            languageLabelStatic.widthAnchor.constraint(equalToConstant: 109),
+            infoRatingLabelStatic.widthAnchor.constraint(equalToConstant: 109)
         ])
     }
     
@@ -355,23 +411,18 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
         infoStackView.addArrangedSubview(lengthLabel)
         infoStackView.addArrangedSubview(languageLabel)
         infoStackView.addArrangedSubview(infoRatingLabel)
+        
         lengthLabel.text = movie?.length
         languageLabel.text = movie?.language
         infoRatingLabel.text = movie?.pgRating
         
-//        let languageTextLabel = UILabel()
-//        languageTextLabel.text = "Language"
-//        let ratingTextLabel = UILabel()
-//        ratingTextLabel.text = "Language"
-//        let lengthTextLabel = UILabel()
-//        lengthTextLabel.text = "Language"
-
         NSLayoutConstraint.activate([
-                infoStackView.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
-                infoStackView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
-                infoStackView.trailingAnchor.constraint(equalTo: viewForDetails.trailingAnchor, constant: -24),
-                infoStackView.bottomAnchor.constraint(lessThanOrEqualTo: viewForDetails.bottomAnchor, constant: -20)
-            ])
+            infoStackView.topAnchor.constraint(equalTo: infoStackViewStatic.bottomAnchor, constant: 5),
+            infoStackView.leadingAnchor.constraint(equalTo: genreStackView.leadingAnchor),
+            lengthLabel.widthAnchor.constraint(equalToConstant: 109),
+            languageLabel.widthAnchor.constraint(equalToConstant: 109),
+            infoRatingLabel.widthAnchor.constraint(equalToConstant: 109)
+        ])
     }
     
     private func setupCollectionView() {
@@ -380,7 +431,7 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
         viewForDetails.addSubview(actorsCollectionView)
         
         NSLayoutConstraint.activate([
-            actorsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            actorsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             actorsCollectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             actorsCollectionView.leftAnchor.constraint(equalTo: viewForDetails.leftAnchor, constant: 24),
             actorsCollectionView.rightAnchor.constraint(equalTo: viewForDetails.rightAnchor, constant: -24),
@@ -412,6 +463,5 @@ extension DetailPageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 14
     }
-    
 }
 
