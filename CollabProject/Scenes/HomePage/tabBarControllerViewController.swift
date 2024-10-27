@@ -9,9 +9,26 @@ import UIKit
 
 class tabBarController: UITabBarController {
 
+    let titleLabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabs()
+        titleLabelConfig()
+    }
+    
+    private func titleLabelConfig() {
+        view.addSubview(titleLabel)
+        titleLabel.textColor = .black
+        titleLabel.text = "Movie man"
+        titleLabel.font = UIFont(name: "Georgia-Bold", size: 20)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide
+                .topAnchor),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor)
+        ])
+        self.navigationItem.titleView = titleLabel
     }
 
     private func configureTabs() {
