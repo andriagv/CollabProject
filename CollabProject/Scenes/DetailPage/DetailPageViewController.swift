@@ -315,6 +315,8 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
     
     private func setupFavoriteButton() {
         nameRatingButtonView.addSubview(favoriteButton)
+        let favoriteImageName = movie?.isFavorite ?? false ? "bookmark.fill" : "bookmark"
+                favoriteButton.setImage(UIImage(systemName: favoriteImageName), for: .normal)
         
         NSLayoutConstraint.activate([
             favoriteButton.topAnchor.constraint(equalTo: nameRatingButtonView.topAnchor, constant: 8),
@@ -328,8 +330,10 @@ class DetailPageViewController: UIViewController, DetailPageViewModelDelegate {
         }), for: .touchUpInside)
     }
     
-    func favButtonPressed() {
+     func favButtonPressed() {
         movie?.isFavorite.toggle()
+        let favoriteImageName = movie?.isFavorite ?? false ? "bookmark.fill" : "bookmark"
+        favoriteButton.setImage(UIImage(systemName: favoriteImageName), for: .normal)
     }
     
     private func setupDescriptionLabel() {
