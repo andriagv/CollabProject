@@ -147,7 +147,7 @@ extension HomePageViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedMovie = viewModel.movie(at: indexPath.item)
         let detailsVC = DetailPageViewController()
-      //  detailsVC.movie = selectedMovie
+        detailsVC.movie = selectedMovie
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
@@ -171,7 +171,7 @@ extension HomePageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedMovie = viewModel.movie(at: indexPath.item)
         let detailsVC = DetailPageViewController()
-    //    detailsVC.movie = selectedMovie
+        detailsVC.movie = selectedMovie
         navigationController?.pushViewController(detailsVC, animated: true)
     }
 }

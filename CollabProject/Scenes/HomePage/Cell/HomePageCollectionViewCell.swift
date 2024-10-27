@@ -43,6 +43,7 @@ class HomePageCollectionViewCell: UICollectionViewCell {
         
         imdbRatingLabel.font = UIFont.systemFont(ofSize: 14)
         imdbRatingLabel.textAlignment = .left
+        imdbRatingLabel.textColor = UIColor.systemGray
         contentView.addSubview(imdbRatingLabel)
         
         movieImageView.isAccessibilityElement = true
@@ -66,7 +67,7 @@ class HomePageCollectionViewCell: UICollectionViewCell {
             movieTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             movieTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
-            imdbRatingLabel.topAnchor.constraint(equalTo: movieTitleLabel.bottomAnchor, constant: 4),
+            imdbRatingLabel.topAnchor.constraint(equalTo: movieTitleLabel.bottomAnchor, constant: 8),
             imdbRatingLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             imdbRatingLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             imdbRatingLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -8)
@@ -76,6 +77,8 @@ class HomePageCollectionViewCell: UICollectionViewCell {
     func configure(with movie: Movie) {
         movieImageView.image = movie.movieImage
         movieTitleLabel.text = movie.name
-        imdbRatingLabel.text = "⭐️ \(movie.imdbRating)/10 IMDb"
+        let starText = NSMutableAttributedString(string: "★ ", attributes: [.foregroundColor: UIColor(red: 1, green: 0.8, blue: 0, alpha: 1)])
+        starText.append(NSAttributedString(string: "\(movie.imdbRating)/10 IMDB", attributes: [.foregroundColor: UIColor.systemGray]))
+        imdbRatingLabel.attributedText = starText
     }
 }
